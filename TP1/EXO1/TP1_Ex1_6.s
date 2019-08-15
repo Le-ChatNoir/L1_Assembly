@@ -1,0 +1,17 @@
+		DATA
+X:		DC.L	3
+I:		DC.L	0
+A:		DC.L	6
+		
+		CODE
+		MOVE.L	X,D0
+		MOVE.L	I,D1
+		MOVE.L	A,D2
+		MOVE.L	#1, D7
+		MOVE.L	#7, D6
+WHILE:	CMP.L	D6,D7
+		BGT		FIN
+		ADD.L	D0,D2
+		ADD.L	#1,D7
+		BRA		WHILE
+FIN:	RTS

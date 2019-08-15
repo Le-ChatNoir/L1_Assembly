@@ -1,0 +1,12 @@
+		DATA
+TAB:	DS.L	5
+		
+		CODE
+LONGR:	MOVE.L	4(A7),A0
+		MOVE.L	#0,D0
+WHILE:	CMP.B	#0,(A0)+
+		BEQ		FIN
+		ADD.L	#1,D0
+		BRA		WHILE
+FIN:	ADD.L	#1,D0
+		RTS

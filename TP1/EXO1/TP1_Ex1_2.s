@@ -1,0 +1,12 @@
+		DATA
+X:		DC.L	6
+
+		CODE
+		MOVE.L	X,D0
+		CMP.L	#1,D0
+		BLT		KEEP
+		CMP.L	#4,D0
+		BGT		KEEP
+		RTS
+KEEP:	MOVE.L	#5,D1
+		RTS
